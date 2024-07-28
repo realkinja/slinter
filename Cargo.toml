@@ -1,0 +1,20 @@
+[package]
+name = "slinter"
+version = "1.0.0"
+authors = ["realkinja <78376161+realkinja@users.noreply.github.com>"]
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+slint = "1.6"
+
+[build-dependencies]
+slint-build = "1.6"
+
+[profile.dev]
+overflow-checks = false
+
+[profile.release]
+lto = true
+panic = "abort"
+codegen-units = 1

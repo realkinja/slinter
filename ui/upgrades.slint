@@ -1,0 +1,85 @@
+import { ScrollView, VerticalBox, Button } from "std-widgets.slint";
+export global UpgradesLogic {
+    callback request-autoclicker-purchase();
+    callback request-grandma-purchase();
+    callback request-robot-purchase();
+
+    in property <int> autoclickers: 0;
+    in property <int> grandmas: 0;
+    in property <int> robots: 0;
+    in property <int> autoclicker_price: 50;
+    in property <int> grandma_price: 150;
+    in property <int> robot_price: 400;
+}
+
+export component UpgradesTab {
+    VerticalLayout {
+        alignment: start;
+        width: 100%;
+        padding: 16px;
+        spacing: 16px;
+        VerticalLayout {
+            spacing: 4px;
+            Text {
+                text: "Autoclickers: \{UpgradesLogic.autoclickers}";
+                font-size: 16px;
+            }
+            Text {
+                text: "Gives you +1 click every second.";
+                font-size: 13px;
+                font-italic: true;
+                color: gray;
+            }
+            autoclickerbutton := Button {
+                width: 100%;
+                text: "Buy an autoclicker\nCosts \{UpgradesLogic.autoclicker_price} clicks.";
+                clicked => {
+                    UpgradesLogic.request-autoclicker-purchase();
+                    autoclickerbutton.clear-focus();
+                }
+            }
+        } 
+        VerticalLayout {
+            spacing: 4px;
+            Text {
+                text: "Grandmas: \{UpgradesLogic.grandmas}";
+                font-size: 16px;
+            }
+            Text {
+                text: "A kind grandma that will give you +2 clicks every second.";
+                font-size: 13px;
+                font-italic: true;
+                color: gray;
+            }
+            grandmabutton := Button {
+                width: 100%;
+                text: "Buy a grandma\nCosts \{UpgradesLogic.grandma_price} clicks.";
+                clicked => {
+                    UpgradesLogic.request-grandma-purchase();
+                    grandmabutton.clear-focus();
+                }
+            }
+        }    
+        VerticalLayout {
+            spacing: 4px;
+            Text {
+                text: "Robots: \{UpgradesLogic.robots}";
+                font-size: 16px;
+            }
+            Text {
+                text: "Semi-evil robots that give you +4 clicks per second.";
+                font-size: 13px;
+                font-italic: true;
+                color: gray;
+            }
+            robotbutton := Button {
+                width: 100%;
+                text: "Buy a robot\nCosts \{UpgradesLogic.robot_price} clicks.";
+                clicked => {
+                    UpgradesLogic.request-robot-purchase();
+                    robotbutton.clear-focus();
+                }
+            }
+        } 
+    }
+}
