@@ -2,6 +2,11 @@
     <img width="128" alt="Slinter Logo" src="images/hd_icon.png">
 </p>
 <h1 align="center">Slinter</h1>
+
+![GitHub Repo stars](https://img.shields.io/github/stars/realkinja/slinter?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/realkinja/slinter?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/realkinja/slinter?style=for-the-badge)
+
 <p>
   <img alt="Slinter screenshot made on Windows 11." src="images/fluent_screenshot.png">
 </p>
